@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cameron's</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Great+Vibes&family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body> 
+<nav>
+    <!-- Sidebar toggle checkbox -->
+    <input type="checkbox" id="sidebar-active">
+
+    <!-- Home / Logo -->
+    <a href="index.html" class="home-link">Home</a>
+
+    <!-- Open sidebar button (hamburger) -->
+    <label for="sidebar-active" class="open-sidebar-button">
+        <!-- Hamburger icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="white" stroke-width="2" fill="none"/>
+        </svg>
+    </label>
+
+    <!-- Sidebar / Links -->
+    <div class="links-container">
+        <!-- Close sidebar button -->
+        <label for="sidebar-active" class="close-sidebar-button">
+            <!-- Close icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M6 6l12 12M18 6l-12 12" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+        </label>
+        <a href="About.html">ABOUT</a>
+        <a href="Contact.html">CONTACT</a>
+        <a href="Gallery.html">GALLERY</a>
+        <a href="Form.html">FORM</a>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+</nav>
+
+      
+<div id="h1">
+    <h1>The Camerons</h1>
+</div>
+
+    <video autoplay loop controls width="300">
+    <source src="VIDEO-2026-01-09-18-01-37.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<p class="verse">
+    “I have found the one whom my soul loves.”<br>
+    <span>Song of Solomon 3:4</span>
+</p>
+
+<img src="IMG_1994.JPG" alt="Wedding Photo" class="wedding-photo">
+    <p><i>February 21, 2026</i></p>
+    <p>1:30 PM</p>
+<i class="fa-solid fa-location-dot"></i>
+    <p> Christarvillas Hotel 99A Hope Road Kingston
+    </p>
+
+    <h2>Welcome to our Wedding Website!</h2>
+<!-- From Uiverse.io by Navarog21 --> 
+ <div id="countdown">
+    <div class="time-box">
+        <span id="days">0</span>
+        <small>Days</small>
+    </div>
+    <div class="time-box">
+        <span id="hours">0</span>
+        <small>Hours</small>
+    </div>
+    <div class="time-box">
+        <span id="minutes">0</span>
+        <small>Minutes</small>
+    </div>
+    <div class="time-box">
+        <span id="seconds">0</span>
+        <small>Seconds</small>
+    </div>
+</div>
+  <!-- From Uiverse.io by CristianMontoya98 --> 
+<footer>
+    <p>&copy; 2026 The Camerons. All rights reserved.</p>
+</footer>
+<script>
+    const weddingDate = new Date("February 21, 2026 13:30:00").getTime();
+
+    const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance < 0) {
+            clearInterval(countdown);
+            document.getElementById("countdown").innerHTML = 
+                "<h3>We're Married! 💍</h3>";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+    }, 1000);
+</script>
+</body>
+</html>

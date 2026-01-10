@@ -1,0 +1,257 @@
+:root{
+    --color-1: #0e0e0e;
+    --text-color: #ffffff;
+    --accent-color: #c8ddea;
+    --font-family: 'Cinzel', serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 12pt;
+    font-family: var(--font-family);
+}
+nav{ 
+    height: 60px;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.links-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+nav a{
+    height: 100%;
+    padding:0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+}   
+nav a:hover{
+    background-color: var(--accent-color);
+}
+nav .home-link{
+    margin-right: auto;
+}
+nav svg{
+    fill: var(--text-color)
+}
+#sidebar-active{
+    display: none;
+}
+.open-sidebar-button, .close-sidebar-button{
+    display: none;
+}
+@media (max-width: 435px){
+    .links-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0,0,0,0.3);
+        transition: 0.3s ease-out;
+    }
+    nav a{
+        box-sizing: border-box;
+        height:auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button, .close-sidebar-button{
+        padding:  20px;
+        display: block;
+    }
+    #sidebar-active:checked ~ .links-container{
+        right: 0;
+    }
+    #sidebar-active:checked ~ #overlay{
+       height: 100%;
+         width: 100%;
+         position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9;
+    }
+}
+
+/* Reset + base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    animation-name: slideLeft;
+    animation-duration: 1.5s
+}
+@keyframes slideLeft {
+    from {
+        transform: translateX(300%);}
+    }
+    to {
+        transform: translateX(0%);}
+
+
+body {
+      background: linear-gradient(to bottom right, #0e0e0e, #141414, #1a1a1a);
+    color: #ffffff;
+    font-family: 'Cinzel', sans-serif;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.6;
+    
+}
+
+/* Headings */
+h1 {
+    font-family: 'Cinzel', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+
+}
+
+h2 {
+    font-family: 'Cinzel', cursive;
+    margin: 25px 0 15px;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-family: 'Cinzel', cursive;
+    margin: 20px 0 10px;
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style-type: disc;
+    margin: 10px 0 10px 20px;
+    text-align: left;
+}
+#p3 {
+    text-align: left;
+}
+#p4 {
+    text-align: right;
+}
+#AMAZON {
+    text-align: center;
+}
+
+/* Video */
+video {
+    width: 70%;
+    max-width: 500px;
+    height: 50%;
+    border-radius: 500px;
+    margin: 15px 0;
+}
+
+/* Image */
+img {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    border-radius: 30px;
+    margin: 15px 0;
+}
+
+/* Text */
+p {
+    margin: 8px 0;
+    font-size: 1rem;
+    font-family: 'Cinzel', sans-serif;
+    text-align: center;
+}   
+#B1 {
+    background-image: url(IMG_1057.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+ 
+/* From Uiverse.io by Navarog21 */ 
+button {
+  width: 10em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge #c8ddea;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #212121;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+button::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #212121;
+  transition: 0.5s;
+}
+
+button:hover::before, button:hover::after {
+  transform: scale(0)
+}
+
+button:hover {
+  box-shadow: inset 0px 0px 25px #d7eaff;
+}
+
+/* 📱 Small screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+
